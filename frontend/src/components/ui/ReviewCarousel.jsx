@@ -75,17 +75,6 @@ const ReviewCarousel = () => {
       prevIndex === 0 ? reviews.length - 4 : prevIndex - 1
     );
   };
-<<<<<<< HEAD:src/Components/ui/ReviewCarousel.jsx
-  return (
-    <div className="mb-20">
-      <div className="items-center flex justify-center mb-10 p-20">
-        <h1 className="md:text-6xl text-4xl pl-3 pr-3 text-center font-bold text-[#004D43] dark:text-[#4FF0D4]">
-          Customer Feedback
-        </h1>
-      </div>
-      <div className="bg-[#004D43] min-h-[50vh] p-4 md:p-20 items-center justify-center flex relative ">
-        <div className="w-full max-w-7xl md:overflow-hidden overflow-x-auto  ">
-=======
   const [cardsToShow, setCardsToShow] = useState(1); 
 
   const updateCardsToShow = () => {
@@ -115,7 +104,6 @@ const ReviewCarousel = () => {
 
       <div className="bg-[#004D43] h-full p-4 md:p-20 items-center justify-center flex relative ">
         <div className="w-full overflow-x-auto max-w-7xl md:overflow-hidden ">
->>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/ui/ReviewCarousel.jsx
           <div
             className="flex transition-transform duration-300 ease-in-out"
             style={{
@@ -128,25 +116,15 @@ const ReviewCarousel = () => {
                 key={index}
                 className="w-full p-2 sm:w-1/2 md:w-1/3 lg:w-1/4"
               >
-<<<<<<< HEAD:src/Components/ui/ReviewCarousel.jsx
-                <div className="relative h-[40vh] md:h-[35vh] p-4 rounded-xl md:w-full w-[42vh] bg-amber-200  z-10 overflow-hidden">
-                  <div className="items-center flex flex-col justify-center mb-3">
-=======
                 <div className="relative min-h-[250px] max-h-[350px] md:min-h-[300px] md:max-h-[400px] p-4 rounded-xl bg-amber-200 z-10 overflow-hidden">
                   <div className="flex flex-col items-center justify-center mb-1">
->>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/ui/ReviewCarousel.jsx
                     <img
                       src={review.img}
                       alt=""
                       className="w-20 h-20 rounded-full"
                     />
-<<<<<<< HEAD:src/Components/ui/ReviewCarousel.jsx
-                    <h1 className="text-xl dark: text-black font-semibold">{review.name}</h1>
-                    <div className="flex ">
-=======
                     <h1 className="text-xl font-semibold text-center">{review.name}</h1>
                     <div className="flex">
->>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/ui/ReviewCarousel.jsx
                       {Array(review.rating)
                         .fill()
                         .map((_, i) => (
@@ -154,10 +132,6 @@ const ReviewCarousel = () => {
                         ))}
                     </div>
                   </div>
-<<<<<<< HEAD:src/Components/ui/ReviewCarousel.jsx
-                  <p className="text-center text-lg dark:text-black leading-6 tracking-wide  mt-4 ">
-                    {review.review}
-=======
 
                   <p className="text-lg leading-6 tracking-wide text-center">
                     {showMoreStates[index]
@@ -169,7 +143,6 @@ const ReviewCarousel = () => {
                     >
                       {showMoreStates[index] ? " Show less" : " Read more"}
                     </span>
->>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/ui/ReviewCarousel.jsx
                   </p>
                 </div>
               </div>
