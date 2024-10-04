@@ -1,3 +1,4 @@
+import { useState } from "react";
 import pic from "../../assets/img/abt1.jpg";
 import pic2 from "../../assets/img/abt1.png";
 import pic3 from "../../assets/img/abt2.png";
@@ -6,6 +7,7 @@ import pic5 from "../../assets/img/abt4.png";
 
 import React from 'react';
 export default function Register() {
+<<<<<<< HEAD:src/Components/Pages/Register.jsx
   const toggleTheme = () => {
     document.body.classList.toggle("dark");
     const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
@@ -17,6 +19,34 @@ export default function Register() {
       document.body.classList.add("dark");
     }
   }, []);
+=======
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [guests, setGuests] = useState();
+
+  const handleSubmit = (e) => {
+    console.log(guests);
+    console.log(time);
+    console.log(date);
+    // console.log(import.meta.env.BACKEND_URL);
+    e.preventDefault();
+    fetch(`${import.meta.env.BACKEND_URL}/api/reservation/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        guests,
+        date,
+        time,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
+>>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/Pages/Register.jsx
   return (
     <>
       <div className="w-full mx-auto mt-10 lg:mt-0 md:mt-0">
@@ -59,7 +89,14 @@ export default function Register() {
                     </label>
                     <select
                       id="guests"
+<<<<<<< HEAD:src/Components/Pages/Register.jsx
                       className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground dark:text-black focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+=======
+                      onChange={(e) => {
+                        setGuests(e.target.value);
+                      }}
+                      className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+>>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/Pages/Register.jsx
                     >
                       <option value="">Select number of guests</option>
                       <option value="1">1 Guest</option>
@@ -80,7 +117,14 @@ export default function Register() {
                     <input
                       type="date"
                       id="date"
+<<<<<<< HEAD:src/Components/Pages/Register.jsx
                       className="flex h-10 w-full items-center rounded-md dark:text-black border border-input bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+=======
+                      onChange={(e) => {
+                        setDate(e.target.value);
+                      }}
+                      className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+>>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/Pages/Register.jsx
                     />
                   </div>
                 </div>
@@ -93,7 +137,14 @@ export default function Register() {
                   </label>
                   <select
                     id="time"
+<<<<<<< HEAD:src/Components/Pages/Register.jsx
                     className="flex h-10 dark:text-black w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+=======
+                    onChange={(e) => {
+                      setTime(e.target.value);
+                    }}
+                    className="flex h-10 w-full items-center rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+>>>>>>> 2c04f6476e97c9e8757c3bfa6555ac41bf2a7bcb:frontend/src/components/Pages/Register.jsx
                   >
                     <option value="">Select time</option>
                     <option value="6:00 PM">6:00 PM</option>
@@ -106,6 +157,7 @@ export default function Register() {
                 <button
                   className="inline-flex items-center justify-center p-4 bg-[#D9D9D9] dark:bg-[#963838] dark:hover:bg-[#824040] hover:bg-[#C9C9C9]"
                   type="submit"
+                  onClick={handleSubmit}
                 >
                   Reserve Now
                 </button>
@@ -118,8 +170,8 @@ export default function Register() {
           </button>
         </div> */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-amber-100 bg-green-900 p-5 text-center">
-                    Popular Board Games
-                </h1>
+          Popular Board Games
+        </h1>
         <div className="mt-8 w-full flex justify-center bg-white ">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 mb-10">
             <div
